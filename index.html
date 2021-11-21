@@ -3,13 +3,14 @@
   <head>
     <title>Markdown to BBCode</title>
     <link rel="stylesheet" href="index.css" type="text/css" media="screen" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/commonmark@0.29.3/dist/commonmark.js"></script>
     <script type="text/javascript" src="markdown-to-bbcode.js"></script>
   </head>
   <body>
     <div class="flex-container max-width max-height">
       <textarea class="half-width max-height" id="markdown" name="text" placeholder="Enter Markdown" onchange="render()"></textarea>
-      <textarea class="half-width max-height" id="bbcode" name="text" placeholder=""></textarea>
+      <textarea readonly class="half-width max-height" id="bbcode" name="text" placeholder=""></textarea>
     </div>
     <script type="text/javascript" src="index.js"></script>
   </body>

@@ -1,7 +1,24 @@
+const reader = new commonmark.Parser();
+const writer = new markdown_to_bbcode.BBCodeRenderer();
+const input = $('#markdown');
+const output = $('#bbcode');
+let timerId;
+
 function render() {
-	var reader = new commonmark.Parser();
-	var writer = new markdown_to_bbcode.BBCodeRenderer();
-	var parsed = reader.parse(document.getElementById("markdown").value);
-	var result = writer.render(parsed);
-	document.getElementById("bbcode").textContent = result;
+	const parsed = reader.parse(input.val());
+	output.val(writer.render(parsed));
 }
+
+input.on('keydown', function () {
+	throttleFunction(render, 200);
+});
+
+throttleFunction = function (func, delay) {
+	if (timerId) return;
+	timerId = setTimeout(function () {
+		func();
+		timerId = undefined;
+	}, delay);
+}
+
+render();
