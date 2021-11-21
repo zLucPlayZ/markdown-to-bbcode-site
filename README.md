@@ -1,3 +1,3 @@
 # markdown-to-bbcode-site
 
-https://ddormer.github.io/markdown-to-bbcode-site/
+https://zlucplayz.github.io/markdown-to-bbcode-site/
